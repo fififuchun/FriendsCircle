@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: eeb7354725a064842800e0330a29cbd4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - empty: {fileID: 3237101674640166555, guid: f3403a9620a57954d89006ef38f1c05e, type: 3}
+  - a: {fileID: 6290926619680454447, guid: 5871e71081ba55f4b8a50e749ac69b94, type: 3}
+  - b: {fileID: 2428365143198272453, guid: ded366ddeb27fac41baf286be0f16a6d, type: 3}
+  - c: {fileID: 3287924775677219465, guid: 7ef8ffca53bafea44bf3998322a0b530, type: 3}
+  - d: {fileID: 2785644513477141689, guid: dee1206bdc2a8484782a25869aa80cd2, type: 3}
+  - ab: {fileID: 702923705722509605, guid: 7b6c1970ff3beab40b26e8025b8e83eb, type: 3}
+  - ac: {fileID: 4194827987663559110, guid: 042dc967b34caae49b1777db98ab8400, type: 3}
+  - bc: {fileID: 7918556920552231417, guid: dc43183875e72b34fa19d3e6f3d26600, type: 3}
+  - set: {instanceID: 0}
+  - setImage: {instanceID: 0}
+  - player: {instanceID: 0}
+  - gameOverImage: {fileID: 7274259047549565167, guid: e6a0d38296b977d48b85746c9693b449, type: 3}
+  - gameClearImage: {fileID: 4699004175093522019, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+  - canvas: {instanceID: 0}
+  - prefabs: {instanceID: 0}
+  - stageManager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
