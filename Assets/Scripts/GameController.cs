@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     //ここから下は自動入力
 
-    [SerializeField] private int setNumber = 1;
+    [SerializeField] private long setNumber = 1;
     //集合族から自然数への全単射の終値
     public RectTransform parentSetRect;
     //parentSetのrectTransformをStartで取得
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
 
         //allSetPosListを修正
         allSetPosList.Clear();
-        for (int i = 0; i < parentSet.transform.childCount; i++) allSetPosList.Add(parentSet.transform.GetChild(i).transform.position);
+        for (int i = 0; i < parentSet.transform.childCount; i++) if (parentSet.transform.GetChild(i).tag == "Content") allSetPosList.Add(parentSet.transform.GetChild(i).transform.position);
     }
 
     public void FixAllSet()

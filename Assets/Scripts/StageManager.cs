@@ -9,72 +9,72 @@ public class StageManager : MonoBehaviour
 {
     public void Push1_1Button()
     {
-        SceneManager.LoadScene("STAGE1_1");
+        SceneManager.LoadScene("STAGE2_1");
     }
 
     public void Push1_2Button()
     {
-        SceneManager.LoadScene("STAGE1_2");
+        SceneManager.LoadScene("STAGE2_2");
     }
 
     public void Push1_3Button()
     {
-        SceneManager.LoadScene("STAGE1_3");
+        SceneManager.LoadScene("STAGE2_3");
     }
 
     public void Push1_4Button()
     {
-        SceneManager.LoadScene("STAGE1_4");
+        SceneManager.LoadScene("STAGE2_4");
     }
 
     public void Push1_5Button()
     {
-        SceneManager.LoadScene("STAGE1_5");
+        SceneManager.LoadScene("STAGE2_5");
     }
 
     public void Push1_6Button()
     {
-        SceneManager.LoadScene("STAGE1_6");
+        SceneManager.LoadScene("STAGE2_6");
     }
 
     public void Push1_7Button()
     {
-        SceneManager.LoadScene("STAGE1_7");
+        SceneManager.LoadScene("STAGE2_7");
     }
 
     public void Push1_8Button()
     {
-        SceneManager.LoadScene("STAGE1_8");
+        SceneManager.LoadScene("STAGE2_8");
     }
 
     public void Push1_9Button()
     {
-        SceneManager.LoadScene("STAGE1_9");
+        SceneManager.LoadScene("STAGE2_9");
     }
 
     public void Push0_1Button()
     {
-        SceneManager.LoadScene("STAGE0_1");
+        SceneManager.LoadScene("STAGE1_1");
     }
 
     public void Push0_2Button()
     {
-        SceneManager.LoadScene("STAGE0_2");
+        SceneManager.LoadScene("STAGE1_2");
     }
 
     public void Push0_3Button()
     {
-        SceneManager.LoadScene("STAGE0_3");
+        SceneManager.LoadScene("STAGE1_3");
     }
 
     public void Push0_4Button()
     {
-        SceneManager.LoadScene("STAGE0_4");
+        SceneManager.LoadScene("STAGE1_4");
     }
 
     public void Push0_5Button()
     {
-        SceneManager.LoadScene("STAGE0_5");
+        SceneManager.LoadScene("STAGE1_5");
     }
 
     // public void PushTestButton()
@@ -110,7 +110,7 @@ public class StageManager : MonoBehaviour
         {
             stageButtons[i].enabled = true;
             lockImages[i].enabled = false;
-            stageButtons[i + 1].gameObject.SetActive(true);
+            if (i < stageButtons.Length - 1) stageButtons[i + 1].gameObject.SetActive(true);
         }
     }
 
@@ -127,14 +127,8 @@ public class StageManager : MonoBehaviour
 
         for (int i = 0; i < stageButtons.Length; i++)
         {
-            if (Mathf.Abs(stageButtons[i].gameObject.transform.position.x - 540) < 250)
-            {
-                stageButtons[i].gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
-            }
-            else
-            {
-                stageButtons[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
-            }
+            if (Mathf.Abs(stageButtons[i].gameObject.transform.position.x - 540) < 250) stageButtons[i].gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+            else stageButtons[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }

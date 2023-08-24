@@ -81,10 +81,11 @@ public class SetManager : MonoBehaviour
         if (list.Contains("acd")) set.Add(43);
         if (list.Contains("bcd")) set.Add(47);
         if (list.Contains("abcd")) set.Add(53);
+        if (list.Contains("e")) set.Add(59);
     }
 
     //setNumberによって位相空間かを判定
-    public bool IsTopsp(int x)
+    public bool IsTopsp(long x)
     {
         if (
             x == 2 || x == 6 || x == 10 || x == 14 || x == 22 || //文字1つ
@@ -98,7 +99,10 @@ public class SetManager : MonoBehaviour
             x == 5106 || x == 6290 || x == 6734 || x == 2886 || x == 3774 || x == 4810 || x == 8510 || x == 8806 || x == 11914 ||
             x == 14430 || x == 59570 || x == 26418 || x == 49062 || x == 110630 || x == 202538 ||
             x == 331890 || x == 774410 || x == 607614 || x == 1012690 || x == 245310 || x == 343434 || x == 39494910 ||
-            x == 15458700270
+
+            x == 13001430 || x == 533058630 || x == 15458700270 ||//文字4つ
+
+            x == 118 //文字5つ(妖を使った全抜きパターン)
         )
             return true;
         else return false;
@@ -162,6 +166,39 @@ public class SetManager : MonoBehaviour
                 bottomChildrenTransform[4].localPosition = new Vector3(200, -100);
                 bottomChildrenTransform[5].localPosition = new Vector3(400, -100);
                 break;
+            case 7:
+                for (int i = 0; i < 7; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+                bottomChildrenTransform[0].localPosition = new Vector3(0, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(150, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(300, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(75, -100);
+                bottomChildrenTransform[5].localPosition = new Vector3(225, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(375, -100);
+                break;
+            case 8:
+                for (int i = 0; i < 8; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+                bottomChildrenTransform[0].localPosition = new Vector3(0, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(150, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(300, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(0, -100);
+                bottomChildrenTransform[5].localPosition = new Vector3(150, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(300, -100);
+                bottomChildrenTransform[7].localPosition = new Vector3(450, -100);
+                break;
+            case 9:
+                for (int i = 0; i < 9; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                bottomChildrenTransform[0].localPosition = new Vector3(-30, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(90, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(210, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(330, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[5].localPosition = new Vector3(30, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(150, -100);
+                bottomChildrenTransform[7].localPosition = new Vector3(270, -100);
+                bottomChildrenTransform[8].localPosition = new Vector3(390, -100);
+                break;
         }
     }
 
@@ -201,6 +238,39 @@ public class SetManager : MonoBehaviour
                 bottomChildrenTransform[3].localPosition = new Vector3(0, -100);
                 bottomChildrenTransform[4].localPosition = new Vector3(200, -100);
                 bottomChildrenTransform[5].localPosition = new Vector3(400, -100);
+                break;
+            case 7:
+                for (int i = 0; i < 7; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+                bottomChildrenTransform[0].localPosition = new Vector3(0, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(150, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(300, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(75, -100);
+                bottomChildrenTransform[5].localPosition = new Vector3(225, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(375, -100);
+                break;
+            case 8:
+                for (int i = 0; i < 8; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+                bottomChildrenTransform[0].localPosition = new Vector3(0, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(150, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(300, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(0, -100);
+                bottomChildrenTransform[5].localPosition = new Vector3(150, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(300, -100);
+                bottomChildrenTransform[7].localPosition = new Vector3(450, -100);
+                break;
+            case 9:
+                for (int i = 0; i < 9; i++) bottomChildrenTransform[i].gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                bottomChildrenTransform[0].localPosition = new Vector3(-30, 100);
+                bottomChildrenTransform[1].localPosition = new Vector3(90, 100);
+                bottomChildrenTransform[2].localPosition = new Vector3(210, 100);
+                bottomChildrenTransform[3].localPosition = new Vector3(330, 100);
+                bottomChildrenTransform[4].localPosition = new Vector3(450, 100);
+                bottomChildrenTransform[5].localPosition = new Vector3(30, -100);
+                bottomChildrenTransform[6].localPosition = new Vector3(150, -100);
+                bottomChildrenTransform[7].localPosition = new Vector3(270, -100);
+                bottomChildrenTransform[8].localPosition = new Vector3(390, -100);
                 break;
         }
     }
@@ -311,19 +381,19 @@ public class SetManager : MonoBehaviour
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 10));
                 break;
             case "STAGE1_5":
-                PlayerPrefs.SetInt("StageNum", Max(stageNum, 9));
-                break;
-            case "STAGE1_6":
-                PlayerPrefs.SetInt("StageNum", Max(stageNum, 10));
-                break;
-            case "STAGE1_7":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 11));
                 break;
-            case "STAGE1_8":
+            case "STAGE1_6":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 12));
                 break;
-            case "STAGE1_9":
+            case "STAGE1_7":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 13));
+                break;
+            case "STAGE1_8":
+                PlayerPrefs.SetInt("StageNum", Max(stageNum, 14));
+                break;
+            case "STAGE1_9":
+                PlayerPrefs.SetInt("StageNum", Max(stageNum, 15));
                 break;
         }
 

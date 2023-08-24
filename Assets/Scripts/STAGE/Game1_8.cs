@@ -15,8 +15,7 @@ public class Game1_8 : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (!onlySet.isInsideSet && !(PlayerManager.instance.transform.parent.name == "BottomGameImage")) gameOver.SetActive(true);
