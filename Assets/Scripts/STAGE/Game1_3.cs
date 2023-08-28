@@ -11,7 +11,7 @@ public class Game1_3 : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("StageNum", 1) == 6) Invoke("ShowExplains", 3.0f);
+        if (PlayerPrefs.GetInt("StageNum", 1) == 6) Invoke("ShowExplains", 1.0f);
     }
 
     void Update()

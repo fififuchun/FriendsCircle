@@ -12,18 +12,19 @@ public class Game0_1 : MonoBehaviour
     public Image[] judgeImages = new Image[5];
     public GameObject gameClearImage;
 
-    public TextMeshProUGUI testText;
+    // public TextMeshProUGUI testText;
 
     public GameObject explainPanel;
 
     void Start()
     {
         for (int i = 0; i < 5; i++) initGameObjects[i] = gameObjects[i].transform.position;
-        if (PlayerPrefs.GetInt("StageNum", 1) < 3)
+        if (PlayerPrefs.GetInt("StageNum", 1) < 3 || StageManager.instance.isTutorial)
         {
             explainPanel.SetActive(true);
             return;
         }
+
     }
 
     void Update()
@@ -43,7 +44,7 @@ public class Game0_1 : MonoBehaviour
                     gameObjects[j].transform.position = initGameObjects[j];
                 }
         }
-        testText.text = gameObjects[0].transform.position.y.ToString() + gameObjects[1].transform.position.y.ToString() + gameObjects[2].transform.position.y.ToString() + gameObjects[3].transform.position.y.ToString() + gameObjects[4].transform.position.y.ToString();
+        // testText.text = gameObjects[0].transform.position.y.ToString() + gameObjects[1].transform.position.y.ToString() + gameObjects[2].transform.position.y.ToString() + gameObjects[3].transform.position.y.ToString() + gameObjects[4].transform.position.y.ToString();
     }
 
     public void PushCloseButtonForExplain()

@@ -353,46 +353,46 @@ public class SetManager : MonoBehaviour
 
         switch (stageName)
         {
-            case "STAGE0_1":
+            case "STAGE1_1":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 2));
                 break;
-            case "STAGE0_2":
+            case "STAGE1_2":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 3));
                 break;
-            case "STAGE0_3":
+            case "STAGE1_3":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 4));
                 break;
-            case "STAGE0_4":
+            case "STAGE1_4":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 5));
                 break;
-            case "STAGE0_5":
+            case "STAGE1_5":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 6));
                 break;
-            case "STAGE1_1"://要修正ーーー
+            case "STAGE2_1":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 7));
                 break;
-            case "STAGE1_2":
+            case "STAGE2_2":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 8));
                 break;
-            case "STAGE1_3":
+            case "STAGE2_3":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 9));
                 break;
-            case "STAGE1_4":
+            case "STAGE2_4":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 10));
                 break;
-            case "STAGE1_5":
+            case "STAGE2_5":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 11));
                 break;
-            case "STAGE1_6":
+            case "STAGE2_6":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 12));
                 break;
-            case "STAGE1_7":
+            case "STAGE2_7":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 13));
                 break;
-            case "STAGE1_8":
+            case "STAGE2_8":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 14));
                 break;
-            case "STAGE1_9":
+            case "STAGE2_9":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 15));
                 break;
         }
