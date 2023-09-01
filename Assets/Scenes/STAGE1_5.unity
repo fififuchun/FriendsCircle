@@ -2543,12 +2543,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 324088462}
     m_Modifications:
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 514859713}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 602158447}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PushClearButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowAd
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GoogleInterstitialAds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4699004175093522018, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_Pivot.x
@@ -3024,7 +3052,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.3137255, b: 0.5882353, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4004,6 +4032,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5607984132359231272, guid: 7b6c1970ff3beab40b26e8025b8e83eb, type: 3}
   m_PrefabInstance: {fileID: 596662516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &602158446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 602158448}
+  - component: {fileID: 602158447}
+  m_Layer: 0
+  m_Name: InterstitialAdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &602158447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602158446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21e67d7c31f61d449891ff8ed0e0548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &602158448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602158446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.054016, y: 3793200, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &603551295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9046,3 +9118,4 @@ SceneRoots:
   - {fileID: 198091083}
   - {fileID: 514859714}
   - {fileID: 1582372454}
+  - {fileID: 602158448}

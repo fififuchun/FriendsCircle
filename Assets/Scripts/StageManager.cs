@@ -155,6 +155,7 @@ public class StageManager : MonoBehaviour
 
     public GameObject content;
     public TextMeshProUGUI clearNumber;
+    public GameObject[] guideImage = new GameObject[2];
     void Update()
     {
         content.transform.localPosition = new Vector3(content.transform.localPosition.x, 300);
@@ -165,5 +166,8 @@ public class StageManager : MonoBehaviour
             if (Mathf.Abs(stageButtons[i].gameObject.transform.position.x - 540) < 250) stageButtons[i].gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
             else stageButtons[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
+
+        guideImage[0].transform.localPosition = new Vector3(-520 - (5 * Mathf.Sin(3 * Time.time)), guideImage[0].transform.localPosition.y);
+        guideImage[1].transform.localPosition = new Vector3(520 + (5 * Mathf.Sin(3 * Time.time)), guideImage[0].transform.localPosition.y);
     }
 }

@@ -43,23 +43,22 @@ public class SetManager : MonoBehaviour
         setArray = GameObject.FindGameObjectsWithTag("Set");
         bottomGameImage = GameObject.Find("BottomGameImage");
         gameControllerArray = new GameController[setArray.Count()];
+        
+        char[] chars = new char[8];
+        chars = SceneManager.GetActiveScene().name.ToCharArray();
+        if (chars[5].ToString() == "1") return;
+        
         for (int i = 0; i < setArray.Count(); i++) gameControllerArray[i] = GameObject.FindGameObjectsWithTag("GameController")[i].GetComponent<GameController>();
         for (int i = 0; i < bottomGameImage.transform.childCount; i++) bottomChildrenTransform.Add(bottomGameImage.transform.GetChild(i).transform);
 
-        if (SceneManager.GetActiveScene().name == "STAGE0_1" || SceneManager.GetActiveScene().name == "STAGE0_2" || SceneManager.GetActiveScene().name == "STAGE0_3") return;
         pauseImage = Resources.Load<GameObject>("PauseImage Variant");
         hintPrefab = Resources.Load<GameObject>("ForRewardAds");
-        // resumeImageForPrefab = Resources.Load<Sprite>("pause");
-        // pauseImageForPrefab = Resources.Load<Sprite>("stop2");
 
         pauseButton = GameObject.FindWithTag("SettingButton").transform.GetChild(0).gameObject;
         hintButton = GameObject.FindWithTag("SettingButton").transform.GetChild(1).gameObject;
         pauseButton.GetComponent<Button>().onClick.AddListener(PushPauseButton);
         hintButton.GetComponent<Button>().onClick.AddListener(PushHintButton);
         rewardAdsManager = GameObject.Find("RewardAdsManager").GetComponent<GoogleRewardAds>();
-        // explainHintImage = GameObject.Find("ExplainHintImage");
-        // closeHintButton = explainHintImage.transform.GetChild(1).GetComponent<Button>();
-        // closeHintButton.onClick.AddListener(PushCloseHintButton);
     }
 
     //List<string>型のsetFamiltListをHashSetに変換
