@@ -12,6 +12,7 @@ TagManager:
   - 3
   - 5
   - 13
+  - SettingButton
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Particle
   - 
   - 
   - 
