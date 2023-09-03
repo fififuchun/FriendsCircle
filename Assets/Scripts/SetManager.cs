@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SetManager : MonoBehaviour
 {
@@ -13,10 +14,6 @@ public class SetManager : MonoBehaviour
     //その名の通り
     public GameObject pauseImage;
     //全画面のpauseImageのGameObject
-    // public Sprite resumeImageForPrefab;
-    //再生ボタンのsprite
-    // public Sprite pauseImageForPrefab;
-    //停止ボタンのsprite
     public GameObject pauseButton;
     //settingButtonの子どものpauseButton
     public GameObject hintButton;
@@ -32,10 +29,15 @@ public class SetManager : MonoBehaviour
     //
     public List<Transform> bottomChildrenTransform;
     //bottomGameImageの子オブジェクトのtransformを配列で取得
+    public GameObject gameClear;
+    public GameObject gameOver;
+    //クリア、オーバーのゲームオブジェクト
+    [Header("AUTO INPUT")]
     public GameObject explainHintImage;
     //ヒントそのもののオブジェクト
     private Button closeHintButton;
     //ヒントオブジェクトを閉じる
+    // public TextMeshProUGUI text;
 
     void Start()
     {
@@ -43,11 +45,16 @@ public class SetManager : MonoBehaviour
         setArray = GameObject.FindGameObjectsWithTag("Set");
         bottomGameImage = GameObject.Find("BottomGameImage");
         gameControllerArray = new GameController[setArray.Count()];
-        
+        // text.text = canvas.GetComponent<RectTransform>().sizeDelta.ToString();
+        gameClear = canvas.transform.Find("GameClear").gameObject;
+        gameClear.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
+
         char[] chars = new char[8];
         chars = SceneManager.GetActiveScene().name.ToCharArray();
         if (chars[5].ToString() == "1") return;
-        
+        //ステージ1ではこれ以上先には行かない
+        gameOver = canvas.transform.Find("GameOver").gameObject;
+        gameOver.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
         for (int i = 0; i < setArray.Count(); i++) gameControllerArray[i] = GameObject.FindGameObjectsWithTag("GameController")[i].GetComponent<GameController>();
         for (int i = 0; i < bottomGameImage.transform.childCount; i++) bottomChildrenTransform.Add(bottomGameImage.transform.GetChild(i).transform);
 

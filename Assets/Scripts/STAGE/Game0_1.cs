@@ -39,10 +39,7 @@ public class Game0_1 : MonoBehaviour
             if (gameObjects[i].transform.position.y == judgeImages[i].transform.position.y) judgeImages[i].enabled = true;
             else judgeImages[i].enabled = false;
 
-            for (int j = 0; j < 5; j++) if (gameObjects[i].transform.position == gameObjects[j].transform.position && i != j)
-                {
-                    gameObjects[j].transform.position = initGameObjects[j];
-                }
+            for (int j = 0; j < 5; j++) if (gameObjects[i].transform.position == gameObjects[j].transform.position && i != j) gameObjects[j].transform.position = initGameObjects[j];
         }
         // testText.text = gameObjects[0].transform.position.y.ToString() + gameObjects[1].transform.position.y.ToString() + gameObjects[2].transform.position.y.ToString() + gameObjects[3].transform.position.y.ToString() + gameObjects[4].transform.position.y.ToString();
     }

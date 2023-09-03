@@ -18,6 +18,7 @@ public class Game0_5 : MonoBehaviour
             firstImage.SetActive(true);
             return;
         }
+        clearImage.GetComponent<RectTransform>().sizeDelta= GameObject.Find("Canvas").GetComponent<RectTransform>().sizeDelta;
     }
 
     // Update is called once per frame
