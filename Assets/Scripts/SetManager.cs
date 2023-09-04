@@ -49,6 +49,13 @@ public class SetManager : MonoBehaviour
         gameClear = canvas.transform.Find("GameClear").gameObject;
         gameClear.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
 
+        pauseButton = GameObject.FindWithTag("SettingButton").transform.GetChild(0).gameObject;
+        hintButton = GameObject.FindWithTag("SettingButton").transform.GetChild(1).gameObject;
+        pauseButton.GetComponent<Button>().onClick.AddListener(PushPauseButton);
+        hintButton.GetComponent<Button>().onClick.AddListener(PushHintButton);
+        pauseImage = Resources.Load<GameObject>("PauseImage Variant");
+        pauseImage.GetComponent<RectTransform>().sizeDelta = canvas.GetComponent<RectTransform>().sizeDelta;
+
         char[] chars = new char[8];
         chars = SceneManager.GetActiveScene().name.ToCharArray();
         if (chars[5].ToString() == "1") return;
@@ -58,13 +65,7 @@ public class SetManager : MonoBehaviour
         for (int i = 0; i < setArray.Count(); i++) gameControllerArray[i] = GameObject.FindGameObjectsWithTag("GameController")[i].GetComponent<GameController>();
         for (int i = 0; i < bottomGameImage.transform.childCount; i++) bottomChildrenTransform.Add(bottomGameImage.transform.GetChild(i).transform);
 
-        pauseImage = Resources.Load<GameObject>("PauseImage Variant");
         hintPrefab = Resources.Load<GameObject>("ForRewardAds");
-
-        pauseButton = GameObject.FindWithTag("SettingButton").transform.GetChild(0).gameObject;
-        hintButton = GameObject.FindWithTag("SettingButton").transform.GetChild(1).gameObject;
-        pauseButton.GetComponent<Button>().onClick.AddListener(PushPauseButton);
-        hintButton.GetComponent<Button>().onClick.AddListener(PushHintButton);
         rewardAdsManager = GameObject.Find("RewardAdsManager").GetComponent<GoogleRewardAds>();
     }
 
@@ -330,8 +331,8 @@ public class SetManager : MonoBehaviour
         if (isHint) return;
         isHint = true;
         hintObject = Instantiate(hintPrefab, canvas.transform);
-        hintObject.transform.GetChild(0).gameObject.GetComponent<Button>().onClick.AddListener(PushWatchAds);
-        hintObject.transform.GetChild(1).gameObject.GetComponent<Button>().onClick.AddListener(PushReturnToGameButton);
+        hintObject.transform.GetChild(1).gameObject.GetComponent<Button>().onClick.AddListener(PushWatchAds);
+        hintObject.transform.GetChild(2).gameObject.GetComponent<Button>().onClick.AddListener(PushReturnToGameButton);
         rewardAdsManager.LoadRewardedAd();
     }
 

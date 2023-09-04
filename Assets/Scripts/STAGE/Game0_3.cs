@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game0_3 : MonoBehaviour
 {
@@ -34,16 +35,30 @@ public class Game0_3 : MonoBehaviour
         Instantiate(abObj, bottomObj.transform);
     }
 
+    public string[] judgeNumberTag = new string[6];
+    public Image[] judgeImages = new Image[6];
+
     void Update()
     {
-        for (int i = 0; i < 6; i++) if (answerGameObjects[i] == null) return;
+        int j = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            if (answerGameObjects[i] == null)
+            {
+                judgeImages[i].enabled = false;
+                continue;
+            }
 
-        if (SceneManager.GetActiveScene().name == "STAGE1_3" && answerGameObjects[0].tag == "3" && answerGameObjects[1].tag == "13" && answerGameObjects[2].tag == "13" && answerGameObjects[3].tag == "2" && answerGameObjects[4].tag == "2" && answerGameObjects[5].tag == "3")
+            if (answerGameObjects[i].tag == judgeNumberTag[i]) judgeImages[i].enabled = true;
+            else judgeImages[i].enabled = false;
+        }
+
+        if (SceneManager.GetActiveScene().name == "STAGE1_3" && judgeImages[0].enabled && judgeImages[1].enabled && judgeImages[2].enabled && judgeImages[3].enabled && judgeImages[4].enabled && judgeImages[5].enabled)
         {
             if (PlayerPrefs.GetInt("StageNum", 1) == 3) afterExplainImage.SetActive(true);
             else gameClear.SetActive(true);
         }
-        else if (SceneManager.GetActiveScene().name == "STAGE1_4" && answerGameObjects[0].tag == "3" && answerGameObjects[1].tag == "5" && answerGameObjects[2].tag == "13" && answerGameObjects[3].tag == "2" && answerGameObjects[4].tag == "2" && answerGameObjects[5].tag == "2")
+        else if (SceneManager.GetActiveScene().name == "STAGE1_4" && judgeImages[0].enabled && judgeImages[1].enabled && judgeImages[2].enabled && judgeImages[3].enabled && judgeImages[4].enabled && judgeImages[5].enabled)
         {
             if (PlayerPrefs.GetInt("StageNum", 1) == 4) afterExplainImage.SetActive(true);
             else gameClear.SetActive(true);

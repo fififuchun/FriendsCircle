@@ -12,6 +12,11 @@ public class Game1_2 : MonoBehaviour
     void Start()
     {
         // onlySet.isInsideSet = false;
+        if (PlayerPrefs.GetInt("StageNum", 1) == 6 || StageManager.instance.isTutorial)
+        {
+            explains.SetActive(true);
+            explainObject[0].SetActive(true);
+        }
     }
 
     void Update()
@@ -23,5 +28,20 @@ public class Game1_2 : MonoBehaviour
 
         if (onlySet.setFamilyList.Contains("a") && onlySet.setFamilyList.Contains("ab")) gameClear.SetActive(true);
         else gameClear.SetActive(false);
+    }
+
+    public GameObject explains;
+    public GameObject[] explainObject = new GameObject[3];
+    private int index = 0;
+
+    public void PushExplainButton()
+    {
+        if (index == 2)
+        {
+            explains.SetActive(false);
+            return;
+        }
+        explainObject[index + 1].SetActive(true);
+        index++;
     }
 }
