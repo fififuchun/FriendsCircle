@@ -29,6 +29,7 @@ public class DragForPractice : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnEndDrag(PointerEventData data)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+        GetComponent<AudioSource>().Play();
 
         if (currentPos.y < 775 && currentPos.y > -475 && (currentPos.x > 200 || currentPos.x < 400))
         {

@@ -30,6 +30,7 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //どれかの集合の中にいるかどうか
     private int gameControllNumber;
     //set.gameControllerArrayの何番目にいるのか
+    public AudioSource putPinSE;
 
     void Start()
     {
@@ -43,6 +44,8 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         buttonForDrag.onClick.AddListener(PushPlayerButton);
         if (gameObject.tag == "PlayerButton") buttonForDrag.enabled = false;
         else if (gameObject.tag == "Content") buttonForDrag.enabled = true;
+
+        // putPinSE = Resources.Load<AudioSource>("PutPinAudio");
     }
     void Update()
     {
@@ -88,6 +91,9 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             thisScript.enabled = false;
             PlayerManager.instance.playerScript.enabled = true;
             set.playerActionList.Add(5);
+            // Resources.Load<AudioSource>("PutPinAudio").Play();
+            // Resources.Load<GameObject>("ForRewardAds");
+            GetComponent<AudioSource>().Play();
 
             for (int i = 0; i < set.setArray.Count(); i++)
             {

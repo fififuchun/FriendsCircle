@@ -33,6 +33,7 @@ public class DragForPractice2 : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+        GetComponent<AudioSource>().Play();
 
         //ここからケーススタディ
         if (currentPos.y < 375 && currentPos.y > -525 && (currentPos.x > 150 && currentPos.x < 300))
