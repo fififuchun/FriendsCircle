@@ -26,4 +26,9 @@ public class Game2_9 : MonoBehaviour
     {
         Application.OpenURL("https://play.google.com/store/apps/details?id=com.FuchunGames");
     }
+
+    public void PushGoXButton()
+    {
+        Application.OpenURL("https://twitter.com/Mergepinz");
+    }
 }

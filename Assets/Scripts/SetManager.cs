@@ -132,6 +132,11 @@ public class SetManager : MonoBehaviour
         else return false;
     }
 
+    public void FixSet()
+    {
+        //
+    }
+
     //ドラッグ時にかぶってたらBottomに帰す
     public void ReturnDraggingImage(int childNum, Transform dragging)
     {
@@ -140,6 +145,9 @@ public class SetManager : MonoBehaviour
         Debug.Log("戻すよ");
         switch (childNum)
         {
+            case 0:
+                bottomChildrenTransform[0].localPosition = new Vector3(200, 0);
+                break;
             case 1:
                 bottomChildrenTransform[0].localPosition = new Vector3(200, 0);
                 break;
@@ -401,6 +409,15 @@ public class SetManager : MonoBehaviour
                 break;
             case "STAGE2_9":
                 PlayerPrefs.SetInt("StageNum", Max(stageNum, 15));
+                break;
+            case "STAGE2_10":
+                PlayerPrefs.SetInt("StageNum", Max(stageNum, 16));
+                break;
+            case "STAGE2_11":
+                PlayerPrefs.SetInt("StageNum", Max(stageNum, 17));
+                break;
+            case "STAGE2_12":
+                PlayerPrefs.SetInt("StageNum", Max(stageNum, 18));
                 break;
         }
 

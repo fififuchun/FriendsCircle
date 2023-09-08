@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     //ここから下は自動入力
 
-    [SerializeField] private long setNumber = 1;
+    public long setNumber = 1;
     //集合族から自然数への全単射の終値
     public RectTransform parentSetRect;
     //parentSetのrectTransformをStartで取得
@@ -83,17 +83,16 @@ public class GameController : MonoBehaviour
             }
         }
 
-        // //色変える
-        // if (set.IsTopsp(setNumber)) parentSetImage.color = new Color(parentSetImage.color.r, parentSetImage.color.g, parentSetImage.color.b, 1.0f);
-        // else
-        // {
-        //     parentSetImage.color = new Color(parentSetImage.color.r, parentSetImage.color.g, parentSetImage.color.b, 0.5f);
-        //     if (setFamilyList.Contains(PlayerManager.instance.gameObject.name)) gameOver.SetActive(true);
-        // }
+        //親子関係を修正
+        set.FixSet();
 
         //allSetPosListを修正
         allSetPosList.Clear();
         for (int i = 0; i < parentSet.transform.childCount; i++) if (parentSet.transform.GetChild(i).tag == "Content") allSetPosList.Add(parentSet.transform.GetChild(i).transform.position);
+
+        //playerがこの集合の要素ならisInsideSetをtrueにする
+        if (set.IsInsideIn(parentSet, parentSetRect, PlayerManager.instance.gameObject)) isInsideSet = true;
+        else isInsideSet = false;
     }
 
     public void FixAllSet()
@@ -129,11 +128,16 @@ public class GameController : MonoBehaviour
         {
             parentSetImage.color = new Color(parentSetImage.color.r, parentSetImage.color.g, parentSetImage.color.b, 0.5f);
             blockImage.SetActive(true);
-            if (setFamilyList.Contains(PlayerManager.instance.gameObject.name)) gameOver.SetActive(true);
+            if (setFamilyList.Contains(PlayerManager.instance.gameObject.name))
+            {
+                gameOver.SetActive(true);
+                Debug.Log("over");
+            }
+            else gameOver.SetActive(false);
         }
 
-        //playerがこの集合の要素ならisInsideSetをtrueにする
-        if (set.IsInsideIn(parentSet, parentSetRect, PlayerManager.instance.gameObject)) isInsideSet = true;
-        else isInsideSet = false;
+        // //playerがこの集合の要素ならisInsideSetをtrueにする
+        // if (set.IsInsideIn(parentSet, parentSetRect, PlayerManager.instance.gameObject)) isInsideSet = true;
+        // else isInsideSet = false;
     }
 }

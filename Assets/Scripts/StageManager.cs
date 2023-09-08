@@ -7,6 +7,33 @@ using TMPro;
 
 public class StageManager : MonoBehaviour
 {
+    //ステージ1
+    public void Push0_1Button()
+    {
+        SceneManager.LoadScene("STAGE1_1");
+    }
+
+    public void Push0_2Button()
+    {
+        SceneManager.LoadScene("STAGE1_2");
+    }
+
+    public void Push0_3Button()
+    {
+        SceneManager.LoadScene("STAGE1_3");
+    }
+
+    public void Push0_4Button()
+    {
+        SceneManager.LoadScene("STAGE1_4");
+    }
+
+    public void Push0_5Button()
+    {
+        SceneManager.LoadScene("STAGE1_5");
+    }
+
+    //ステージ2
     public void Push1_1Button()
     {
         SceneManager.LoadScene("STAGE2_1");
@@ -52,35 +79,22 @@ public class StageManager : MonoBehaviour
         SceneManager.LoadScene("STAGE2_9");
     }
 
-    public void Push0_1Button()
+    public void Push2_10Button()
     {
-        SceneManager.LoadScene("STAGE1_1");
+        SceneManager.LoadScene("STAGE2_10");
     }
 
-    public void Push0_2Button()
+    public void Push2_11Button()
     {
-        SceneManager.LoadScene("STAGE1_2");
+        SceneManager.LoadScene("STAGE2_11");
     }
 
-    public void Push0_3Button()
+    public void Push2_12Button()
     {
-        SceneManager.LoadScene("STAGE1_3");
+        SceneManager.LoadScene("STAGE2_12");
     }
+    //ステージボタン
 
-    public void Push0_4Button()
-    {
-        SceneManager.LoadScene("STAGE1_4");
-    }
-
-    public void Push0_5Button()
-    {
-        SceneManager.LoadScene("STAGE1_5");
-    }
-
-    // public void PushTestButton()
-    // {
-    //     SceneManager.LoadScene("STAGE1_2 1");
-    // }
 
     public void PushResetButton()
     {
@@ -119,8 +133,8 @@ public class StageManager : MonoBehaviour
         else return b;
     }
 
-    public Button[] stageButtons = new Button[14];
-    public Image[] lockImages = new Image[14];
+    public Button[] stageButtons = new Button[17];
+    public Image[] lockImages = new Image[17];
     public Button tutorialButton;
     public Image titleImage;
     private int stageNum;

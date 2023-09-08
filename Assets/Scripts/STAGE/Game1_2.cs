@@ -12,7 +12,7 @@ public class Game1_2 : MonoBehaviour
     void Start()
     {
         // onlySet.isInsideSet = false;
-        if (PlayerPrefs.GetInt("StageNum", 1) == 6 || StageManager.instance.isTutorial)
+        if (PlayerPrefs.GetInt("StageNum", 1) == 7 || StageManager.instance.isTutorial)
         {
             explains.SetActive(true);
             explainObject[0].SetActive(true);

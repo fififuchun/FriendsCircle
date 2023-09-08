@@ -30,7 +30,7 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     //どれかの集合の中にいるかどうか
     private int gameControllNumber;
     //set.gameControllerArrayの何番目にいるのか
-    public AudioSource putPinSE;
+    // public AudioSource putPinSE;
 
     void Start()
     {
@@ -91,8 +91,6 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             thisScript.enabled = false;
             PlayerManager.instance.playerScript.enabled = true;
             set.playerActionList.Add(5);
-            // Resources.Load<AudioSource>("PutPinAudio").Play();
-            // Resources.Load<GameObject>("ForRewardAds");
             GetComponent<AudioSource>().Play();
 
             for (int i = 0; i < set.setArray.Count(); i++)
@@ -100,6 +98,12 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 if (set.IsSamePosAs(set.gameControllerArray[i].allSetPosList, gameObject.transform.position))
                 {
                     Debug.Log("かぶってるよ");
+                    // dragging.SetParent(bottomGameImage.transform);
+                    // this.gameObject.transform.SetParent(set.bottomGameImage.transform);
+                    // Debug.Log(set.bottomGameImage.transform.childCount);
+
+                    // if (set.bottomGameImage.transform.childCount == 0) set.ReturnDraggingImage(1, gameObject.transform);
+                    // else set.ReturnDraggingImage(set.bottomGameImage.transform.childCount + 1, gameObject.transform);
                     set.ReturnDraggingImage(set.bottomGameImage.transform.childCount, gameObject.transform);
                     RectForDrag.sizeDelta = new Vector2(180, 180);
                     thisScript.enabled = true;

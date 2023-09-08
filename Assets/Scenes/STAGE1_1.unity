@@ -7696,26 +7696,30 @@ PrefabInstance:
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 800855372}
+      objectReference: {fileID: 1893782575}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1893782575}
+      objectReference: {fileID: 800855372}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PushClearButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ShowAd
       objectReference: {fileID: 0}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PushClearButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GoogleInterstitialAds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SetManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 37235362262108763, guid: f85557583bdb2d9409e29b506505c001, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

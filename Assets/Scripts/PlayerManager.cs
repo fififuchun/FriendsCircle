@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour//, IBeginDragHandler, IDragHandler, I
         playerScript = gameObject.GetComponent<PlayerManager>();
     }
 
+    // private bool isInsideAnySet
     void Update()
     {
         if (gameObject.tag == "Content")
@@ -53,6 +54,19 @@ public class PlayerManager : MonoBehaviour//, IBeginDragHandler, IDragHandler, I
             }
         }
         // currentPos = playerObj.transform.position - canvasPos;
+
+        if (!(isInsideAnySet()) && !(this.gameObject.transform.parent.transform.gameObject.name == "BottomGameImage"))
+        {
+            set.gameOver.SetActive(true);
+            Debug.Log("外出た");
+        }
+    }
+
+    //どれかに入ってたらtrue
+    public bool isInsideAnySet()
+    {
+        for (int i = 0; i < set.gameControllerArray.Length; i++) if (set.gameControllerArray[i].isInsideSet) return true;
+        return false;
     }
 
     //ここから関数

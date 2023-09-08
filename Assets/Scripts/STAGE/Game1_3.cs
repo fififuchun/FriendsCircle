@@ -23,7 +23,7 @@ public class Game1_3 : MonoBehaviour
     }
 
     public GameObject explains;
-    public GameObject[] explainImages = new GameObject[2];
+    public GameObject[] explainImages = new GameObject[3];
 
     private int i = 0;
 
@@ -34,16 +34,13 @@ public class Game1_3 : MonoBehaviour
 
     public void PushExplainButton()
     {
-        if (i == 0)
-        {
-            explainImages[0].SetActive(false);
-            explainImages[1].SetActive(true);
-        }
-        else if (i == 1)
+        explainImages[i].SetActive(false);
+        if (i == 2)
         {
             explains.SetActive(false);
             return;
         }
+        explainImages[i + 1].SetActive(true);
         i++;
     }
 }

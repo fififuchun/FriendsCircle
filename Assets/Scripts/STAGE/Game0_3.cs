@@ -40,7 +40,7 @@ public class Game0_3 : MonoBehaviour
 
     void Update()
     {
-        int j = 0;
+        // int j = 0;
         for (int i = 0; i < 6; i++)
         {
             if (answerGameObjects[i] == null)

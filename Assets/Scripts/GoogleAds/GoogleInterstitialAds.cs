@@ -8,7 +8,7 @@ public class GoogleInterstitialAds : MonoBehaviour
 {
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-  private string _adUnitId = "ca-app-pub-3940256099942544/1033173712";//変えてない
+  private string _adUnitId = "ca-app-pub-7270862051318366/1409150206";//変えた
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/4411468910";//変えてない
 #else
@@ -62,12 +62,14 @@ public class GoogleInterstitialAds : MonoBehaviour
         LoadInterstitialAd();
     }
 
+    //クリアボタンにアタッチ
     /// <summary>
     /// Shows the interstitial ad.
     /// </summary>
     public void ShowAd()
     {
-
+        // if (Random.Range(0, 2) == 1) return;
+        return;
         if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             Debug.Log("Showing interstitial ad.");
