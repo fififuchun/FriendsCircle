@@ -118,6 +118,7 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 gameObject.transform.SetParent(set.gameControllerArray[gameControllNumber].parentSet.transform);
                 set.bottomChildrenTransform.Remove(gameObject.transform);
             }
+            else thisScript.enabled = true;
             set.FixDraggingImage(set.bottomGameImage.transform.childCount);
         }
     }

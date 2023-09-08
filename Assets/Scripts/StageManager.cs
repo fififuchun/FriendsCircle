@@ -98,7 +98,7 @@ public class StageManager : MonoBehaviour
 
     public void PushResetButton()
     {
-        PlayerPrefs.SetInt("StageNum", 1);
+        PlayerPrefs.SetInt("StageNum", 6);
         Start();
     }
 

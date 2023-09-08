@@ -93,6 +93,9 @@ public class GameController : MonoBehaviour
         //playerがこの集合の要素ならisInsideSetをtrueにする
         if (set.IsInsideIn(parentSet, parentSetRect, PlayerManager.instance.gameObject)) isInsideSet = true;
         else isInsideSet = false;
+
+        //SetParent
+        if (isInsideSet) PlayerManager.instance.gameObject.transform.SetParent(parentSet.transform);
     }
 
     public void FixAllSet()

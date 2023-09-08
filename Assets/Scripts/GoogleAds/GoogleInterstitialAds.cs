@@ -68,8 +68,7 @@ public class GoogleInterstitialAds : MonoBehaviour
     /// </summary>
     public void ShowAd()
     {
-        // if (Random.Range(0, 2) == 1) return;
-        return;
+        if (Random.Range(0, 2) == 1) return;
         if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             Debug.Log("Showing interstitial ad.");
