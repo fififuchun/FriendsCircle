@@ -678,9 +678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817550076084945905, guid: 93ee80fa4baabc049a83d5f6fbdfca31, type: 3}
       propertyPath: m_text
-      value: '2-7
-
-'
+      value: 2-10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
