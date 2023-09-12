@@ -346,6 +346,7 @@ public class SetManager : MonoBehaviour
 
     public void PushWatchAds()
     {
+        hintObject.transform.GetChild(3).gameObject.GetComponent<TextMeshProUGUI>().text= "広告準備中...";
         rewardAdsManager.ShowRewardedAd();
     }
 
